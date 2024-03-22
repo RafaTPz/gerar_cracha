@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import { AreaHome } from "./styled";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 const Home = () => {
 
@@ -40,6 +40,7 @@ const Home = () => {
     <label htmlFor="cpf">CPF:</label>
     <input type='text' placeholder="Digite seu cpf" name='cpf' required={true} onChange={eventChange}/><br />
     <button onClick={aoSubmit}>Submit</button>
+    <link to={{pathname: '/Cracha', state: {pessoa}}}>Enviar</link>
     </form>
     </AreaHome>
     );

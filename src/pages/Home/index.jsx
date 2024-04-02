@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import { AreaHome } from "./styled";
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import alert from '../../utils/alert'
 
 const Home = () => {
 
@@ -25,8 +26,10 @@ const Home = () => {
         //document.write(pessoa.nome + "<br/>");
         //document.write(pessoa.sobrenome + "<br/>");
         //document.write(pessoa.idade + "<br/>");
-        //document.write(pessoa.cpf)
-        navigate("/Cracha");
+        //document.write(pessoa.cpf)]
+        alert('Alert', 'Você tem certeza?')
+        navigate("/Cracha", {state: {pessoa}});
+        
     }
     return(
     <AreaHome>
@@ -40,7 +43,6 @@ const Home = () => {
     <label htmlFor="cpf">CPF:</label>
     <input type='text' placeholder="Digite seu cpf" name='cpf' required={true} onChange={eventChange}/><br />
     <button onClick={aoSubmit}>Submit</button>
-    <link to={{pathname: '/Cracha', state: {pessoa}}}>Enviar</link>
     </form>
     </AreaHome>
     );
